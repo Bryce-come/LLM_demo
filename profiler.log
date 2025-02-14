@@ -1,0 +1,50 @@
+2025-02-12 15:53:44,978 - Profiler - INFO - 开始生成代码
+2025-02-12 15:53:44,979 - Profiler - ERROR - 代码生成失败
+2025-02-12 15:54:14,430 - Profiler - INFO - 开始生成代码
+2025-02-12 15:54:14,431 - Profiler - ERROR - 代码生成失败
+2025-02-12 15:55:21,690 - Profiler - INFO - 开始生成代码
+2025-02-12 15:55:24,497 - Profiler - ERROR - 代码生成失败
+2025-02-12 16:04:07,892 - Profiler - INFO - 开始生成代码
+2025-02-12 16:04:10,478 - Profiler - ERROR - 代码生成失败
+2025-02-13 10:55:59,279 - Profiler - INFO - 开始生成代码
+2025-02-13 10:56:52,810 - Profiler - INFO - 开始生成代码
+2025-02-13 10:57:56,086 - Profiler - ERROR - 代码生成失败
+2025-02-13 10:58:29,437 - Profiler - INFO - 开始生成代码
+2025-02-13 10:58:31,956 - Profiler - ERROR - 代码生成失败
+2025-02-13 10:59:53,173 - Profiler - INFO - 开始生成代码
+2025-02-13 10:59:56,782 - Profiler - ERROR - 代码生成失败
+2025-02-13 11:06:55,124 - Profiler - INFO - 开始生成代码
+2025-02-13 11:06:57,383 - Profiler - ERROR - 代码生成失败
+2025-02-13 11:07:59,116 - Profiler - INFO - 开始生成代码
+2025-02-13 11:08:01,093 - Profiler - ERROR - 代码生成失败
+2025-02-13 13:41:20,250 - Profiler - INFO - 已设置 1 个测试用例
+2025-02-13 13:41:20,253 - Profiler - INFO - 开始生成代码
+2025-02-13 13:41:21,188 - Profiler - ERROR - 代码生成失败
+2025-02-13 13:42:40,981 - Profiler - INFO - 已设置 1 个测试用例
+2025-02-13 13:42:40,981 - Profiler - INFO - 开始生成代码
+2025-02-13 13:43:21,807 - Profiler - INFO - 代码生成成功，开始评估
+2025-02-13 13:43:21,814 - Profiler - INFO - 结果已保存到: D:\资料\二月\LLM_demo\data\output\result.json
+2025-02-13 13:43:21,815 - Profiler - INFO - 评估完成，得分: 100.0
+2025-02-13 13:50:23,470 - Profiler - INFO - 已设置 1 个测试用例
+2025-02-13 13:50:23,471 - Profiler - INFO - 开始生成代码
+2025-02-13 13:50:24,312 - Profiler - ERROR - 代码生成失败
+2025-02-13 13:50:45,227 - Profiler - INFO - 已设置 1 个测试用例
+2025-02-13 13:50:45,227 - Profiler - INFO - 开始生成代码
+2025-02-13 13:51:24,166 - Profiler - INFO - 代码生成成功，开始评估
+2025-02-13 13:51:24,175 - Profiler - INFO - 结果已保存到: D:\资料\二月\LLM_demo\data\output\result.json
+2025-02-13 13:51:24,175 - Profiler - INFO - 评估完成，得分: 100.0
+2025-02-13 16:49:03,877 - Profiler - INFO - 已设置 1 个测试用例
+2025-02-13 16:49:03,879 - Profiler - INFO - 开始生成代码
+2025-02-13 16:49:47,326 - Profiler - INFO - 代码生成成功，开始评估
+2025-02-13 16:49:47,329 - Profiler - INFO - 结果已保存到: D:\资料\二月\LLM_demo\test_demo\data\output\result.json
+2025-02-13 16:49:47,329 - Profiler - INFO - 评估完成，得分: 100.0
+2025-02-14 11:05:47,405 - Profiler - INFO - 已设置 1 个测试用例
+2025-02-14 11:05:47,406 - Profiler - INFO - 开始生成代码
+2025-02-14 11:06:33,007 - Profiler - INFO - 代码生成成功，开始评估
+2025-02-14 11:06:33,010 - Profiler - INFO - 结果已保存到: D:\资料\二月\LLM_demo\test_demo\data\output\result.json
+2025-02-14 11:06:33,010 - Profiler - INFO - 评估完成，得分: 100.0
+2025-02-14 14:40:08,281 - Profiler - INFO - 已设置 1 个测试用例
+2025-02-14 14:40:08,282 - Profiler - INFO - 开始生成代码
+2025-02-14 14:40:56,832 - Profiler - INFO - 代码生成成功，开始评估
+2025-02-14 14:40:56,835 - Profiler - INFO - 结果已保存到: D:\资料\二月\LLM_demo\test_demo\data\output\result.json
+2025-02-14 14:40:56,835 - Profiler - INFO - 评估完成，得分: 100.0

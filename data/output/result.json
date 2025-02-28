@@ -1,0 +1,200 @@
+{
+  "code": "def isolated_component_deletion(matrix):\n    rows, cols = len(matrix), len(matrix[0])\n    directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]\n    \n    def is_valid(row, col):\n        return 0 <= row < rows and 0 <= col < cols\n    \n    def get_neighbors(row, col):\n        neighbors = []\n        for dr, dc in directions:\n            new_row, new_col = row + dr, col + dc\n            if is_valid(new_row, new_col):\n                neighbors.append((new_row, new_col))\n        return neighbors\n    \n    def find_isolated_component(row, col):\n        visited = set()\n        stack = [(row, col)]\n        isolated_cells = set()\n        while stack:\n            r, c = stack.pop()\n            visited.add((r, c))\n            isolated_cells.add((r, c))\n            for nr, nc in get_neighbors(r, c):\n                if matrix[nr][nc] == 1 and (nr, nc) not in visited:\n                    stack.append((nr, nc))\n        return isolated_cells\n    \n    def replace_isolated_components():\n        need_replace = set()\n        for r in range(rows):\n            for c in range(cols):\n                if matrix[r][c] == 1:\n                    isolated_cells = find_isolated_component(r, c)\n                    if any((nr, nc) not in isolated_cells for nr, nc in get_neighbors(r, c)):\n                        need_replace.update(isolated_cells)\n        for r, c in need_replace:\n            matrix[r][c] = 0\n    \n    while True:\n        before_replace = sum(row.count(1) for row in matrix)\n        replace_isolated_components()\n        after_replace = sum(row.count(1) for row in matrix)\n        if before_replace == after_replace:\n            break\n    \n    return matrix\n\n# 测试示例\nmatrix = [\n    [0, 1, 0, 0, 0, 0],\n    [0, 0, 0, 1, 1, 1],\n    [1, 1, 1, 1, 1, 1],\n    [0, 0, 0, 1, 1, 1],\n    [0, 0, 0, 0, 0, 0],\n    [0, 0, 0, 0, 0, 0]\n]\nresult = isolated_component_deletion(matrix)\nfor row in result:\n    print(row)",
+  "evaluation": {
+    "success": false,
+    "score": 50.0,
+    "average_time": 3.409385681152344e-05,
+    "results": [
+      {
+        "success": false,
+        "time": 2.7894973754882812e-05,
+        "input": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "expected": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "actual": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "success": true,
+        "time": 1.8358230590820312e-05,
+        "input": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "expected": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "actual": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "success": true,
+        "time": 2.86102294921875e-06,
+        "input": [
+          [
+            1
+          ]
+        ],
+        "expected": [
+          [
+            1
+          ]
+        ],
+        "actual": [
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "success": false,
+        "time": 8.726119995117188e-05,
+        "input": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "expected": [
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "actual": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    ]
+  }
+}

@@ -3,42 +3,26 @@ import os
 from configs import Config
 from utils import ensure_directories
 from profiler import Profiler
+from read_case_to_json import CaseReader
 import sys
-
 
 async def main():
     try:
-        # 确保目录存在
         ensure_directories()
 
-        # 测试用例
-        test_cases = [
-            {
-                'input': [
-                    [0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 1, 1, 1],
-                    [1, 1, 1, 1, 1, 1],
-                    [0, 0, 0, 1, 1, 1],
-                    [0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 1, 0, 0]
-                ],
-                'expected': [
-                    [0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 1, 1, 1],
-                    [0, 0, 0, 1, 1, 1],
-                    [0, 0, 0, 1, 1, 1],
-                    [0, 0, 0, 0, 0, 0],
-                    [0, 0, 0, 0, 0, 0]
-                ],
-                'description': '消除孤立的1，保持连续的1区域'  # 添加问题描述
-            }
-        ]
+        # 从目录读取测试用例
+        case_reader = CaseReader(Config.CASE_PATH)
+        test_cases = case_reader.read_cases()
 
-        # 初始化处理器
+        if not test_cases:
+            print("在 cases 目录中未找到测试用例。")
+            sys.exit(1)
+
+        # 初始化分析器
         profiler = Profiler()
         profiler.set_test_cases(test_cases)
 
-        # 生成和评估代码
+        # 生成并评估代码
         result = await profiler.generate_and_evaluate()
 
         if result:
@@ -57,7 +41,6 @@ async def main():
         print(f"执行失败: {e}")
         sys.exit(1)
 
-
 def run_main():
     try:
         asyncio.run(main())
@@ -67,7 +50,6 @@ def run_main():
     except Exception as e:
         print(f"程序异常: {e}")
         sys.exit(1)
-
 
 if __name__ == "__main__":
     run_main()
